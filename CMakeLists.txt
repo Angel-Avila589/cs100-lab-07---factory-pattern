@@ -4,14 +4,15 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_SUBDIRECTORY(googletest)
 
+ADD_EXECUTABLE(calculator
+	main.cpp
+)
+
 ADD_EXECUTABLE(test
 	unit_test.cpp
 )
 
-ADD_EXECUTABLE(lab
-        main.cpp
-)
 TARGET_LINK_LIBRARIES(test gtest)
-TARGET_LINK_LIBRARIES(lab gtest)
+TARGET_LINK_LIBRARIES(calculator gtest)
 
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
